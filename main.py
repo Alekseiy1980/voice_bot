@@ -62,12 +62,13 @@ def command():
         # r.adjust_for_ambient_noise(source, duration=1)
         # audio = r.listen(source)
         audio = input("-> ")
-        # пример -> открой youtoobe
+        # пример -> открой youtoobe распознавание объектов на python / глубокое машинное обучение
     try:
         # zadacha = r.recognize_google(audio, language="ru == RU").lower()
         zadacha = audio.lower()   #
         print("Вы сказали " + zadacha)
         # talk("Вы сказали " + zadacha)
+
     except sr.UnknownValueError:
         talk("Я вас не поняла ")
         zadacha = command()
@@ -76,7 +77,7 @@ def command():
 def makeSomething(zadacha):
     if 'youtoobe' in zadacha:
         talk("Уже открываю")
-        url = 'https://www.youtube.com'
+        url = "https://www.youtube.com/results?search_query=" + zadacha
         webbrowser.open(url)
     elif 'stop' in zadacha:
         save()
